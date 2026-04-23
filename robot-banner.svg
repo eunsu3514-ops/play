@@ -1,0 +1,24 @@
+<svg width="1200" height="600" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="robotGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#00A6FB;stop-opacity:0.2" />
+            <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:0.1" />
+        </linearGradient>
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="10" result="coloredBlur"/>
+            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+    </defs>
+    <!-- Background Tech Lines -->
+    <g stroke="rgba(0,166,251,0.1)" stroke-width="0.5">
+        <path d="M0 100h1200M0 200h1200M0 300h1200M0 400h1200M0 500h1200"/>
+        <path d="M100 0v600M200 0v600M300 0v600M400 0v600M500 0v600M600 0v600M700 0v600M800 0v600M900 0v600M1000 0v600M1100 0v600"/>
+    </g>
+    <!-- Robot Silhouette (Abstract High-Tech) -->
+    <g transform="translate(600, 300)" filter="url(#glow)">
+        <path d="M-150,-200 L150,-200 L200,-50 L200,150 L150,250 L-150,250 L-200,150 L-200,-50 Z" fill="url(#robotGrad)" stroke="#00A6FB" stroke-width="2"/>
+        <circle cx="0" cy="-100" r="60" fill="none" stroke="#D4AF37" stroke-width="2"/>
+        <path d="M-80,-50 H80 M-80,0 H80 M-80,50 H80" stroke="rgba(212,175,55,0.3)" stroke-width="1"/>
+        <text x="0" y="200" text-anchor="middle" fill="#00A6FB" font-family="monospace" font-size="20">AI_PHYSICAL_SYSTEM v.2.0</text>
+    </g>
+</svg>
