@@ -12,171 +12,261 @@
 <body>
     <header id="main-header">
         <nav class="container">
+            <!-- Left: DMU Logo + D-ARCHIVE Brand (home button) -->
             <div class="logo-wrapper">
                 <button id="header-back-btn" class="back-btn hidden">←</button>
-                <img src="logo.png" alt="D-ARCHIVE LOGO" class="brand-logo">
-                <div class="logo">D-ARCHIVE</div>
+                <a href="#" id="home-link" class="brand-home-link">
+                    <img src="dmu-logo.png" alt="동양미래대학교 로고" class="brand-logo" style="height:35px; width:auto;">
+                    <div class="logo">D-ARCHIVE</div>
+                </a>
             </div>
-            <ul class="nav-links">
-                <li><a href="#" class="nav-filter-btn active" data-category="all">아카이브</a></li>
-                <li><a href="#" class="nav-filter-btn" data-category="dept">학과별</a></li>
-                <li><a href="#" class="nav-filter-btn" data-category="mentor">멘토가이드</a></li>
-                <li><a href="https://www.dongyang.ac.kr" target="_blank" class="school-link">동양미래대학교 ↗</a></li>
+
+            <!-- Center: Main Navigation Tabs -->
+            <ul class="nav-links" id="main-nav">
+                <li><a href="#" class="nav-tab active" data-tab="home">홈</a></li>
+                <li><a href="#" class="nav-tab" data-tab="archive">아카이브</a></li>
+                <li><a href="#" class="nav-tab" data-tab="dept">학과별</a></li>
+                <li><a href="#" class="nav-tab" data-tab="mentor">멘토가이드</a></li>
+                <li><a href="#" class="nav-tab nav-tab-register" data-tab="register">질문 등록</a></li>
             </ul>
-            <div class="header-actions">
-                <button id="ask-btn" class="btn-primary">질문 등록</button>
+
+            <!-- Right: DMU Logo Mark + School Link -->
+            <div class="header-right">
+                <a href="https://www.dongyang.ac.kr" target="_blank" class="dmu-mark-link" title="동양미래대학교">
+                    <img src="https://upload.wikimedia.org/wikipedia/ko/thumb/0/0e/Dongyang_mirae_university_logo.png/200px-Dongyang_mirae_university_logo.png"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                         alt="동양미래대학교" class="dmu-mark-img">
+                    <div class="dmu-mark-fallback" style="display:none;">DMU</div>
+                </a>
             </div>
         </nav>
     </header>
 
     <main>
-        <section id="hero">
-            <div class="container hero-content">
-                <h1 class="bold">D-ARCHIVE</h1>
-                <p class="slogan">OFFICIAL PRACTICAL DATABASE</p>
-                <p class="brand-desc">동양미래대학교 학생들을 위한 <br><strong>전문 커리어 및 학술 지식 저장소</strong>입니다. <br>선배들과 전문가들의 실전 지식을 아카이빙하세요.</p>
-                <div class="search-bar">
-                    <input type="text" id="search-input" placeholder="아카이브 검색" aria-label="질문 검색">
-                </div>
-            </div>
-        </section>
+        <!-- ===== TAB: HOME (소개) ===== -->
+        <div id="tab-home" class="tab-panel active">
+            <section id="hero">
+                <div class="container hero-content">
+                    <h1 class="bold">D-ARCHIVE</h1>
+                    <p class="slogan">CONNECTING MENTORS &amp; MENTEES</p>
+                    <p class="brand-desc">동양미래대학교 학생들을 위한 <br><strong>멘토와 멘티가 함께 성장하는 공간</strong>입니다. <br>선배들의 소중한 경험을 나누고 함께 더 나은 미래를 설계하세요.</p>
 
-        <section id="qna-section" class="container">
-            <div id="sub-filter-container" class="sub-filter-grid">
-                <div class="faculty-accordion">
-                    <!-- MECHANICAL -->
-                    <div class="faculty-item">
-                        <div class="faculty-header"><span>기계공학부</span></div>
-                        <div class="faculty-content">
-                            <button class="sub-filter-btn" data-dept="기계공학과">기계공학과</button>
-                            <button class="sub-filter-btn" data-dept="기계설계공학과">기계설계공학과</button>
+                    <div class="home-stats">
+                        <div class="stat-item">
+                            <span class="stat-num">15+</span>
+                            <span class="stat-label">개 학과</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-num">AI</span>
+                            <span class="stat-label">스마트 멘토</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-num">∞</span>
+                            <span class="stat-label">경험 아카이브</span>
                         </div>
                     </div>
 
-                    <!-- ROBOTICS -->
-                    <div class="faculty-item">
-                        <div class="faculty-header"><span>로봇자동화공학부</span></div>
-                        <div class="faculty-content">
-                            <button class="sub-filter-btn" data-dept="자동화공학과">자동화공학과</button>
-                            <button class="sub-filter-btn" data-dept="로봇소프트웨어과">로봇소프트웨어과</button>
-                        </div>
+                    <div class="home-cta-group">
+                        <button class="btn-home-cta" data-goto="archive">아카이브 둘러보기 →</button>
+                        <button class="btn-home-cta btn-home-secondary" data-goto="dept">학과별 진로 탐색 →</button>
                     </div>
 
-                    <!-- COMPUTING -->
-                    <div class="faculty-item">
-                        <div class="faculty-header"><span>컴퓨터소프트웨어공학부</span></div>
-                        <div class="faculty-content">
-                            <button class="sub-filter-btn" data-dept="웹응용소프트웨어공학과">웹응용소프트웨어공학과</button>
-                            <button class="sub-filter-btn" data-dept="컴퓨터소프트웨어공학과">컴퓨터소프트웨어공학과</button>
-                            <button class="sub-filter-btn" data-dept="인공지능소프트웨어학과">인공지능소프트웨어학과</button>
+                    <!-- RECENT ARCHIVE PREVIEW -->
+                    <div class="home-preview-section">
+                        <div class="section-title-bar" style="border:none; margin-bottom:1rem; padding-top:0;">
+                            <h3 style="font-size:1.5rem; font-weight:900;">실시간 아카이브 현황</h3>
+                            <a href="#" class="nav-tab" data-tab="archive" style="font-size:0.7rem; font-weight:800; border:1px solid #111; padding:0.2rem 0.5rem; text-decoration:none;">전체보기 +</a>
                         </div>
-                    </div>
-
-                    <!-- DESIGN -->
-                    <div class="faculty-item">
-                        <div class="faculty-header"><span>디자인학부</span></div>
-                        <div class="faculty-content">
-                            <button class="sub-filter-btn" data-dept="건축과">건축과</button>
-                            <button class="sub-filter-btn" data-dept="실내건축디자인과">실내건축디자인과</button>
-                            <button class="sub-filter-btn" data-dept="시각디자인과">시각디자인과</button>
-                            <button class="sub-filter-btn" data-dept="AR·VR콘텐츠디자인과">AR·VR콘텐츠디자인과</button>
-                        </div>
-                    </div>
-
-                    <!-- BUSINESS -->
-                    <div class="faculty-item">
-                        <div class="faculty-header"><span>경영학부</span></div>
-                        <div class="faculty-content">
-                            <button class="sub-filter-btn" data-dept="경영학과">경영학과</button>
-                            <button class="sub-filter-btn" data-dept="세무회계학과">세무회계학과</button>
-                            <button class="sub-filter-btn" data-dept="유통마케팅학과">유통마케팅학과</button>
-                            <button class="sub-filter-btn" data-dept="호텔관광학과">호텔관광학과</button>
+                        <div id="home-qna-preview" class="preview-grid">
+                            <!-- JS will inject 3 recent cards here -->
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
+        </div>
 
-            <div id="roadmap-display" class="roadmap-container hidden">
-                <!-- Roadmap Info Injected Here -->
-            </div>
+        <!-- ===== TAB: ARCHIVE (전체 아카이브) ===== -->
+        <div id="tab-archive" class="tab-panel hidden">
+            <section id="archive-section" class="container">
+                <div class="section-title-bar">
+                    <h2 class="section-title">ARCHIVE</h2>
+                    <div class="search-bar-inline">
+                        <input type="text" id="search-input" placeholder="아카이브 검색" aria-label="질문 검색">
+                    </div>
+                </div>
+                <div id="qna-list-archive" class="qna-grid"></div>
+            </section>
+        </div>
 
-            <div id="qna-list" class="qna-grid">
-                <!-- Q&A Items will be injected here -->
-            </div>
-        </section>
+        <!-- ===== TAB: DEPT (학과별) ===== -->
+        <div id="tab-dept" class="tab-panel hidden">
+            <section id="dept-section" class="container">
+                <div class="section-title-bar">
+                    <h2 class="section-title">학과별 진로</h2>
+                    <button id="header-back-btn-dept" class="back-btn-inline hidden">← 목록으로</button>
+                </div>
+
+                <div id="sub-filter-container" class="sub-filter-grid">
+                    <div class="faculty-accordion">
+                        <!-- MECHANICAL -->
+                        <div class="faculty-item">
+                            <div class="faculty-header"><span>기계공학부</span></div>
+                            <div class="faculty-content">
+                                <button class="sub-filter-btn" data-dept="기계공학과">기계공학과</button>
+                                <button class="sub-filter-btn" data-dept="기계설계공학과">기계설계공학과</button>
+                            </div>
+                        </div>
+                        <!-- ROBOTICS -->
+                        <div class="faculty-item">
+                            <div class="faculty-header"><span>로봇자동화공학부</span></div>
+                            <div class="faculty-content">
+                                <button class="sub-filter-btn" data-dept="자동화공학과">자동화공학과</button>
+                                <button class="sub-filter-btn" data-dept="로봇소프트웨어과">로봇소프트웨어과</button>
+                            </div>
+                        </div>
+                        <!-- COMPUTING -->
+                        <div class="faculty-item">
+                            <div class="faculty-header"><span>컴퓨터소프트웨어공학부</span></div>
+                            <div class="faculty-content">
+                                <button class="sub-filter-btn" data-dept="웹응용소프트웨어공학과">웹응용소프트웨어공학과</button>
+                                <button class="sub-filter-btn" data-dept="컴퓨터소프트웨어공학과">컴퓨터소프트웨어공학과</button>
+                                <button class="sub-filter-btn" data-dept="인공지능소프트웨어학과">인공지능소프트웨어학과</button>
+                            </div>
+                        </div>
+                        <!-- DESIGN -->
+                        <div class="faculty-item">
+                            <div class="faculty-header"><span>디자인학부</span></div>
+                            <div class="faculty-content">
+                                <button class="sub-filter-btn" data-dept="건축과">건축과</button>
+                                <button class="sub-filter-btn" data-dept="실내건축디자인과">실내건축디자인과</button>
+                                <button class="sub-filter-btn" data-dept="시각디자인과">시각디자인과</button>
+                                <button class="sub-filter-btn" data-dept="AR·VR콘텐츠디자인과">AR·VR콘텐츠디자인과</button>
+                            </div>
+                        </div>
+                        <!-- BUSINESS -->
+                        <div class="faculty-item">
+                            <div class="faculty-header"><span>경영학부</span></div>
+                            <div class="faculty-content">
+                                <button class="sub-filter-btn" data-dept="경영학과">경영학과</button>
+                                <button class="sub-filter-btn" data-dept="세무회계학과">세무회계학과</button>
+                                <button class="sub-filter-btn" data-dept="유통마케팅학과">유통마케팅학과</button>
+                                <button class="sub-filter-btn" data-dept="호텔관광학과">호텔관광학과</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="roadmap-display" class="roadmap-container hidden"></div>
+                <div id="qna-list-dept" class="qna-grid"></div>
+            </section>
+        </div>
+
+        <!-- ===== TAB: MENTOR (멘토가이드) ===== -->
+        <div id="tab-mentor" class="tab-panel hidden">
+            <section id="mentor-section" class="container">
+                <div class="section-title-bar">
+                    <h2 class="section-title">멘토 가이드</h2>
+                </div>
+                <div id="qna-list-mentor" class="qna-grid"></div>
+            </section>
+        </div>
+
+        <!-- ===== TAB: REGISTER (질문 등록) ===== -->
+        <div id="tab-register" class="tab-panel hidden">
+            <section id="register-section" class="container">
+                <div class="section-title-bar">
+                    <h2 class="section-title">질문 등록</h2>
+                </div>
+                <div class="register-form-wrapper">
+                    <form id="qna-form">
+                        <div class="form-group">
+                            <label for="category">카테고리</label>
+                            <select id="category" required>
+                                <option value="dept">학과 질문</option>
+                                <option value="mentor">멘토 가이드</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="department-name">학과명</label>
+                            <select id="department-name" required>
+                                <option value="">선택해 주세요</option>
+                                <optgroup label="기계공학부">
+                                    <option value="기계공학과">기계공학과</option>
+                                    <option value="기계설계공학과">기계설계공학과</option>
+                                </optgroup>
+                                <optgroup label="로봇자동화공학부">
+                                    <option value="자동화공학과">자동화공학과</option>
+                                    <option value="로봇소프트웨어과">로봇소프트웨어과</option>
+                                </optgroup>
+                                <optgroup label="컴퓨터소프트웨어공학부">
+                                    <option value="웹응용소프트웨어공학과">웹응용소프트웨어공학과</option>
+                                    <option value="컴퓨터소프트웨어공학과">컴퓨터소프트웨어공학과</option>
+                                    <option value="인공지능소프트웨어학과">인공지능소프트웨어학과</option>
+                                </optgroup>
+                                <optgroup label="디자인학부">
+                                    <option value="건축과">건축과</option>
+                                    <option value="실내건축디자인과">실내건축디자인과</option>
+                                    <option value="시각디자인과">시각디자인과</option>
+                                    <option value="AR·VR콘텐츠디자인과">AR·VR콘텐츠디자인과</option>
+                                </optgroup>
+                                <optgroup label="경영학부">
+                                    <option value="경영학과">경영학과</option>
+                                    <option value="세무회계학과">세무회계학과</option>
+                                    <option value="유통마케팅학과">유통마케팅학과</option>
+                                    <option value="호텔관광학과">호텔관광학과</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="title">제목</label>
+                            <input type="text" id="title" placeholder="제목을 입력하세요" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="author">작성자</label>
+                            <input type="text" id="author" placeholder="이름 또는 ID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="content">내용</label>
+                            <textarea id="content" rows="6" placeholder="궁금한 내용을 상세히 적어주세요" required></textarea>
+                        </div>
+                        <div class="register-footer">
+                            <button type="button" id="cancel-register" class="btn-secondary">초기화</button>
+                            <button type="submit" class="btn-submit">아카이브 등록</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
     </main>
 
-    <!-- Modal for Posting Question -->
-    <div id="modal-overlay" class="hidden">
-        <div class="modal">
+    <!-- AI Consultant Modal -->
+    <div id="ai-modal-overlay" class="hidden">
+        <div class="modal ai-chat-modal">
             <header>
                 <div class="modal-header-left">
-                    <button id="modal-back-btn" class="modal-icon-btn">←</button>
-                    <h2>질문 등록</h2>
+                    <button id="ai-modal-back-btn" class="modal-icon-btn">←</button>
+                    <h2 id="ai-consultant-title">AI 학과 상담원</h2>
                 </div>
-                <button id="close-modal" class="modal-icon-btn">&times;</button>
+                <button id="close-ai-modal" class="modal-icon-btn">&times;</button>
             </header>
-            <form id="qna-form">
-                <div class="form-group">
-                    <label for="category">카테고리</label>
-                    <select id="category" required>
-                        <option value="dept">학과 질문</option>
-                        <option value="mentor">멘토 가이드</option>
-                    </select>
+            <div id="ai-chat-history" class="chat-container">
+                <div class="chat-message bot">
+                    안녕하세요! 무엇을 도와드릴까요?
                 </div>
-                <div class="form-group">
-                    <label for="department-name">학과명</label>
-                    <select id="department-name" required>
-                        <option value="">선택해 주세요</option>
-                        <!-- MECHANICAL -->
-                        <optgroup label="기계공학부">
-                            <option value="기계공학과">기계공학과</option>
-                            <option value="기계설계공학과">기계설계공학과</option>
-                        </optgroup>
-                        <!-- ROBOTICS -->
-                        <optgroup label="로봇자동화공학부">
-                            <option value="자동화공학과">자동화공학과</option>
-                            <option value="로봇소프트웨어과">로봇소프트웨어과</option>
-                        </optgroup>
-                        <!-- COMPUTING -->
-                        <optgroup label="컴퓨터소프트웨어공학부">
-                            <option value="웹응용소프트웨어공학과">웹응용소프트웨어공학과</option>
-                            <option value="컴퓨터소프트웨어공학과">컴퓨터소프트웨어공학과</option>
-                            <option value="인공지능소프트웨어학과">인공지능소프트웨어학과</option>
-                        </optgroup>
-                        <!-- DESIGN -->
-                        <optgroup label="디자인학부">
-                            <option value="건축과">건축과</option>
-                            <option value="실내건축디자인과">실내건축디자인과</option>
-                            <option value="시각디자인과">시각디자인과</option>
-                            <option value="AR·VR콘텐츠디자인과">AR·VR콘텐츠디자인과</option>
-                        </optgroup>
-                        <!-- BUSINESS -->
-                        <optgroup label="경영학부">
-                            <option value="경영학과">경영학과</option>
-                            <option value="세무회계학과">세무회계학과</option>
-                            <option value="유통마케팅학과">유통마케팅학과</option>
-                            <option value="호텔관광학과">호텔관광학과</option>
-                        </optgroup>
-                    </select>
+            </div>
+            <footer class="ai-modal-footer">
+                <div class="ai-input-wrapper">
+                    <input type="text" id="ai-chat-input" placeholder="질문을 입력하세요..." autocomplete="off">
+                    <button id="ai-send-btn" title="전송">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
                 </div>
-                <div class="form-group">
-                    <label for="title">제목</label>
-                    <input type="text" id="title" placeholder="제목을 입력하세요" required>
-                </div>
-                <div class="form-group">
-                    <label for="author">작성자</label>
-                    <input type="text" id="author" placeholder="이름 또는 ID" required>
-                </div>
-                <div class="form-group">
-                    <label for="content">내용</label>
-                    <textarea id="content" rows="5" placeholder="궁금한 내용을 상세히 적어주세요" required></textarea>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" id="cancel-modal" class="btn-secondary">뒤로 돌아가기</button>
-                    <button type="submit" class="btn-submit">아카이브 등록</button>
-                </div>
-            </form>
+            </footer>
         </div>
     </div>
 
@@ -189,12 +279,12 @@
             <div style="display:flex; gap:2rem; font-size:0.9rem;">
                 <a href="#" style="color:inherit; text-decoration:none;">이용약관</a>
                 <a href="#" style="color:inherit; text-decoration:none;">개인정보처리방침</a>
-                <a href="#" style="color:inherit; text-decoration:none;">고객센터</a>
+                <a href="https://www.dongyang.ac.kr" target="_blank" style="color:inherit; text-decoration:none;">동양미래대학교 ↗</a>
             </div>
         </div>
     </footer>
 
-    <!-- Firebase SDK (Using v9 Compat for simplicity in script tag) -->
+    <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
     <script src="app.js"></script>
