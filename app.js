@@ -109,8 +109,8 @@ const ROADMAP_DATA = {
             deptUrl: "https://www.dongyang.ac.kr/computer/index.do",
             certs: ["정보처리기사", "AWS Solution Architect", "SQLD"],
             companies: [
-                { name: "네이버", url: "https://www.navercorp.com", logo: "navercorp.com" },
-                { name: "우아한형제들", url: "https://www.woowayahan.com", logo: "woowayahan.com" },
+                { name: "네이버", url: "https://www.navercorp.com", logo: "naver.com" },
+                { name: "우아한형제들", url: "https://www.woowahan.com", logo: "woowahan.com" },
                 { name: "토스", url: "https://toss.im", logo: "toss.im" },
                 { name: "당근", url: "https://www.daangn.com", logo: "daangn.com" }
             ],
@@ -171,24 +171,23 @@ const ROADMAP_DATA = {
             deptUrl: "https://www.dongyang.ac.kr/computer/index.do",
             certs: ["정보처리기사", "AWS Solution Architect", "SQLD"],
             companies: [
-
-            { name: "네이버", url: "https://www.navercorp.com", logo: "navercorp.com" },
-            { name: "우아한형제들", url: "https://www.woowayahan.com", logo: "woowayahan.com" },
-            { name: "토스", url: "https://toss.im", logo: "toss.im" },
-            { name: "당근", url: "https://www.daangn.com", logo: "daangn.com" }
-        ],
-        qnet: "https://www.q-net.or.kr"
-    },
-    "컴퓨터소프트웨어공학과": {
-        certs: ["정보처리기사", "정보보안기사", "네트워크관리사"],
-        companies: [
-            { name: "카카오", url: "https://www.kakaocorp.com", logo: "kakaocorp.com" },
-            { name: "라인", url: "https://linepluscorp.com", logo: "linepluscorp.com" },
-            { name: "안랩", url: "https://www.ahnlab.com", logo: "ahnlab.com" },
-            { name: "신한DS", url: "https://www.shinhands.co.kr", logo: "shinhan.com" }
-        ],
-        qnet: "https://www.q-net.or.kr"
-    },
+                { name: "네이버", url: "https://www.navercorp.com", logo: "naver.com" },
+                { name: "우아한형제들", url: "https://www.woowahan.com", logo: "woowahan.com" },
+                { name: "토스", url: "https://toss.im", logo: "toss.im" },
+                { name: "당근", url: "https://www.daangn.com", logo: "daangn.com" }
+            ],
+            qnet: "https://www.q-net.or.kr"
+        },
+        "컴퓨터소프트웨어공학과": {
+            certs: ["정보처리기사", "정보보안기사", "네트워크관리사"],
+            companies: [
+                { name: "카카오", url: "https://www.kakaocorp.com", logo: "kakaocorp.com" },
+                { name: "라인", url: "https://linepluscorp.com", logo: "linecorp.com" },
+                { name: "안랩", url: "https://www.ahnlab.com", logo: "ahnlab.com" },
+                { name: "신한DS", url: "https://www.shinhands.co.kr", logo: "shinhan.com" }
+            ],
+            qnet: "https://www.q-net.or.kr"
+        },
     "인공지능소프트웨어학과": {
         certs: ["ADsP", "빅데이터분석기사", "SQLD"],
         companies: [
@@ -519,7 +518,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 return `
                                     <a href="${url}" target="_blank" class="company-card">
                                         <div class="company-logo">
-                                            <img src="https://logo.clearbit.com/${logo}" onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=111&color=fff'" alt="${name}">
+                                            <img src="https://logos.hunter.io/${logo}" onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=111&color=fff'" alt="${name}">
                                         </div>
                                         <span class="company-name">${name}</span>
                                     </a>
