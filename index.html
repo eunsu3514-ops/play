@@ -3,290 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D-ARCHIVE | 동양미래대학교 실시간 Q&A 아카이브</title>
-    <meta name="description" content="현직자와 선배가 들려주는 진짜 이야기. 학과와 직무에 대한 궁금증을 실시간으로 해결하세요.">
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts: Inter & Noto Sans KR -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>동양미래대학교 반도체부트캠프사업단 | 분석 및 실무 중심</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header id="main-header">
-        <nav class="container">
-            <!-- Left: DMU Logo + D-ARCHIVE Brand (home button) -->
-            <div class="logo-wrapper">
-                <button id="header-back-btn" class="back-btn hidden">←</button>
-                <a href="#" id="home-link" class="brand-home-link">
-                    <img src="dmu-logo.png" alt="동양미래대학교 로고" class="brand-logo" style="height:35px; width:auto;">
-                    <div class="logo">D-ARCHIVE</div>
-                </a>
-            </div>
 
-            <!-- Center: Main Navigation Tabs -->
-            <ul class="nav-links" id="main-nav">
-                <li><a href="#" class="nav-tab active" data-tab="home">홈</a></li>
-                <li><a href="#" class="nav-tab" data-tab="archive">아카이브</a></li>
-                <li><a href="#" class="nav-tab" data-tab="dept">학과별</a></li>
-                <li><a href="#" class="nav-tab" data-tab="mentor">멘토가이드</a></li>
-                <li><a href="#" class="nav-tab nav-tab-register" data-tab="register">질문 등록</a></li>
+    <header>
+        <nav class="top-nav">
+            <a href="#" class="logo">
+                <i class="fas fa-microchip"></i>
+                동양미래대학교 <span>반도체부트캠프사업단</span>
+            </a>
+            <ul class="gnb">
+                <li class="gnb-item">
+                    <a href="#" class="gnb-link">사업단 소개</a>
+                    <ul class="dropdown">
+                        <li><a href="#greeting">인사말</a></li>
+                        <li><a href="#overview">사업소개</a></li>
+                        <li><a href="#">조직도</a></li>
+                        <li><a href="#partners">협력기관</a></li>
+                    </ul>
+                </li>
+                <li class="gnb-item">
+                    <a href="#" class="gnb-link">교육과정안내/신청</a>
+                    <ul class="dropdown">
+                        <li><a href="#">교육과정안내</a></li>
+                        <li><a href="#courses">교육과정신청</a></li>
+                    </ul>
+                </li>
+                <li class="gnb-item">
+                    <a href="#" class="gnb-link">교육시설장비</a>
+                    <ul class="dropdown">
+                        <li><a href="#">교육환경</a></li>
+                        <li><a href="#">교육장비</a></li>
+                    </ul>
+                </li>
+                <li class="gnb-item">
+                    <a href="#" class="gnb-link">커뮤니티</a>
+                    <ul class="dropdown">
+                        <li><a href="#community">공지사항</a></li>
+                        <li><a href="#">자료실</a></li>
+                        <li><a href="#">갤러리</a></li>
+                        <li><a href="#">프로그램/취업 후기</a></li>
+                    </ul>
+                </li>
+                <li class="gnb-item">
+                    <a href="#" class="gnb-link">채용정보</a>
+                    <ul class="dropdown">
+                        <li><a href="#">채용정보</a></li>
+                        <li><a href="#partners">참여기업</a></li>
+                    </ul>
+                </li>
             </ul>
-
-            <!-- Right: DMU Logo Mark + School Link -->
-            <div class="header-right">
-                <a href="https://www.dongyang.ac.kr" target="_blank" class="dmu-mark-link" title="동양미래대학교">
-                    <img src="https://upload.wikimedia.org/wikipedia/ko/thumb/0/0e/Dongyang_mirae_university_logo.png/200px-Dongyang_mirae_university_logo.png"
-                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                         alt="동양미래대학교" class="dmu-mark-img">
-                    <div class="dmu-mark-fallback" style="display:none;">DMU</div>
-                </a>
+            <div class="header-auth">
+                <button id="login-trigger" class="auth-btn">Student Portal</button>
             </div>
         </nav>
     </header>
 
-    <main>
-        <!-- ===== TAB: HOME (소개) ===== -->
-        <div id="tab-home" class="tab-panel active">
-            <section id="hero">
-                <div class="container hero-content">
-                    <h1 class="bold">D-ARCHIVE</h1>
-                    <p class="slogan">CONNECTING MENTORS &amp; MENTEES</p>
-                    <p class="brand-desc">동양미래대학교 학생들을 위한 <br><strong>멘토와 멘티가 함께 성장하는 공간</strong>입니다. <br>선배들의 소중한 경험을 나누고 함께 더 나은 미래를 설계하세요.</p>
-
-                    <div class="home-stats">
-                        <div class="stat-item">
-                            <span class="stat-num">15+</span>
-                            <span class="stat-label">개 학과</span>
-                        </div>
-                        <div class="stat-divider"></div>
-                        <div class="stat-item">
-                            <span class="stat-num">AI</span>
-                            <span class="stat-label">스마트 멘토</span>
-                        </div>
-                        <div class="stat-divider"></div>
-                        <div class="stat-item">
-                            <span class="stat-num">∞</span>
-                            <span class="stat-label">경험 아카이브</span>
-                        </div>
-                    </div>
-
-                    <div class="home-cta-group">
-                        <button class="btn-home-cta" data-goto="archive">아카이브 둘러보기 →</button>
-                        <button class="btn-home-cta btn-home-secondary" data-goto="dept">학과별 진로 탐색 →</button>
-                    </div>
-
-                    <!-- RECENT ARCHIVE PREVIEW -->
-                    <div class="home-preview-section">
-                        <div class="section-title-bar" style="border:none; margin-bottom:1rem; padding-top:0;">
-                            <h3 style="font-size:1.5rem; font-weight:900;">실시간 아카이브 현황</h3>
-                            <a href="#" class="nav-tab" data-tab="archive" style="font-size:0.7rem; font-weight:800; border:1px solid #111; padding:0.2rem 0.5rem; text-decoration:none;">전체보기 +</a>
-                        </div>
-                        <div id="home-qna-preview" class="preview-grid">
-                            <!-- JS will inject 3 recent cards here -->
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- ===== TAB: ARCHIVE (전체 아카이브) ===== -->
-        <div id="tab-archive" class="tab-panel hidden">
-            <section id="archive-section" class="container">
-                <div class="section-title-bar">
-                    <h2 class="section-title">ARCHIVE</h2>
-                    <div class="search-bar-inline">
-                        <input type="text" id="search-input" placeholder="아카이브 검색" aria-label="질문 검색">
-                    </div>
-                </div>
-                <div id="qna-list-archive" class="qna-grid"></div>
-            </section>
-        </div>
-
-        <!-- ===== TAB: DEPT (학과별) ===== -->
-        <div id="tab-dept" class="tab-panel hidden">
-            <section id="dept-section" class="container">
-                <div class="section-title-bar">
-                    <h2 class="section-title">학과별 진로</h2>
-                    <button id="header-back-btn-dept" class="back-btn-inline hidden">← 목록으로</button>
-                </div>
-
-                <div id="sub-filter-container" class="sub-filter-grid">
-                    <div class="faculty-accordion">
-                        <!-- MECHANICAL -->
-                        <div class="faculty-item">
-                            <div class="faculty-header"><span>기계공학부</span></div>
-                            <div class="faculty-content">
-                                <button class="sub-filter-btn" data-dept="기계공학과">기계공학과</button>
-                                <button class="sub-filter-btn" data-dept="기계설계공학과">기계설계공학과</button>
-                            </div>
-                        </div>
-                        <!-- ROBOTICS -->
-                        <div class="faculty-item">
-                            <div class="faculty-header"><span>로봇자동화공학부</span></div>
-                            <div class="faculty-content">
-                                <button class="sub-filter-btn" data-dept="자동화공학과">자동화공학과</button>
-                                <button class="sub-filter-btn" data-dept="로봇소프트웨어과">로봇소프트웨어과</button>
-                            </div>
-                        </div>
-                        <!-- COMPUTING -->
-                        <div class="faculty-item">
-                            <div class="faculty-header"><span>컴퓨터소프트웨어공학부</span></div>
-                            <div class="faculty-content">
-                                <button class="sub-filter-btn" data-dept="웹응용소프트웨어공학과">웹응용소프트웨어공학과</button>
-                                <button class="sub-filter-btn" data-dept="컴퓨터소프트웨어공학과">컴퓨터소프트웨어공학과</button>
-                                <button class="sub-filter-btn" data-dept="인공지능소프트웨어학과">인공지능소프트웨어학과</button>
-                            </div>
-                        </div>
-                        <!-- DESIGN -->
-                        <div class="faculty-item">
-                            <div class="faculty-header"><span>디자인학부</span></div>
-                            <div class="faculty-content">
-                                <button class="sub-filter-btn" data-dept="건축과">건축과</button>
-                                <button class="sub-filter-btn" data-dept="실내건축디자인과">실내건축디자인과</button>
-                                <button class="sub-filter-btn" data-dept="시각디자인과">시각디자인과</button>
-                                <button class="sub-filter-btn" data-dept="AR·VR콘텐츠디자인과">AR·VR콘텐츠디자인과</button>
-                            </div>
-                        </div>
-                        <!-- BUSINESS -->
-                        <div class="faculty-item">
-                            <div class="faculty-header"><span>경영학부</span></div>
-                            <div class="faculty-content">
-                                <button class="sub-filter-btn" data-dept="경영학과">경영학과</button>
-                                <button class="sub-filter-btn" data-dept="세무회계학과">세무회계학과</button>
-                                <button class="sub-filter-btn" data-dept="유통마케팅학과">유통마케팅학과</button>
-                                <button class="sub-filter-btn" data-dept="호텔관광학과">호텔관광학과</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="roadmap-display" class="roadmap-container hidden"></div>
-                <div id="qna-list-dept" class="qna-grid"></div>
-            </section>
-        </div>
-
-        <!-- ===== TAB: MENTOR (멘토가이드) ===== -->
-        <div id="tab-mentor" class="tab-panel hidden">
-            <section id="mentor-section" class="container">
-                <div class="section-title-bar">
-                    <h2 class="section-title">멘토 가이드</h2>
-                </div>
-                <div id="qna-list-mentor" class="qna-grid"></div>
-            </section>
-        </div>
-
-        <!-- ===== TAB: REGISTER (질문 등록) ===== -->
-        <div id="tab-register" class="tab-panel hidden">
-            <section id="register-section" class="container">
-                <div class="section-title-bar">
-                    <h2 class="section-title">질문 등록</h2>
-                </div>
-                <div class="register-form-wrapper">
-                    <form id="qna-form">
-                        <div class="form-group">
-                            <label for="category">카테고리</label>
-                            <select id="category" required>
-                                <option value="dept">학과 질문</option>
-                                <option value="mentor">멘토 가이드</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="department-name">학과명</label>
-                            <select id="department-name" required>
-                                <option value="">선택해 주세요</option>
-                                <optgroup label="기계공학부">
-                                    <option value="기계공학과">기계공학과</option>
-                                    <option value="기계설계공학과">기계설계공학과</option>
-                                </optgroup>
-                                <optgroup label="로봇자동화공학부">
-                                    <option value="자동화공학과">자동화공학과</option>
-                                    <option value="로봇소프트웨어과">로봇소프트웨어과</option>
-                                </optgroup>
-                                <optgroup label="컴퓨터소프트웨어공학부">
-                                    <option value="웹응용소프트웨어공학과">웹응용소프트웨어공학과</option>
-                                    <option value="컴퓨터소프트웨어공학과">컴퓨터소프트웨어공학과</option>
-                                    <option value="인공지능소프트웨어학과">인공지능소프트웨어학과</option>
-                                </optgroup>
-                                <optgroup label="디자인학부">
-                                    <option value="건축과">건축과</option>
-                                    <option value="실내건축디자인과">실내건축디자인과</option>
-                                    <option value="시각디자인과">시각디자인과</option>
-                                    <option value="AR·VR콘텐츠디자인과">AR·VR콘텐츠디자인과</option>
-                                </optgroup>
-                                <optgroup label="경영학부">
-                                    <option value="경영학과">경영학과</option>
-                                    <option value="세무회계학과">세무회계학과</option>
-                                    <option value="유통마케팅학과">유통마케팅학과</option>
-                                    <option value="호텔관광학과">호텔관광학과</option>
-                                </optgroup>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="title">제목</label>
-                            <input type="text" id="title" placeholder="제목을 입력하세요" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="author">작성자</label>
-                            <input type="text" id="author" placeholder="이름 또는 ID" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="content">내용</label>
-                            <textarea id="content" rows="6" placeholder="궁금한 내용을 상세히 적어주세요" required></textarea>
-                        </div>
-                        <div class="register-footer">
-                            <button type="button" id="cancel-register" class="btn-secondary">초기화</button>
-                            <button type="submit" class="btn-submit">아카이브 등록</button>
-                        </div>
-                    </form>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <!-- AI Consultant Modal -->
-    <div id="ai-modal-overlay" class="hidden">
-        <div class="modal ai-chat-modal">
-            <header>
-                <div class="modal-header-left">
-                    <button id="ai-modal-back-btn" class="modal-icon-btn">←</button>
-                    <h2 id="ai-consultant-title">AI 학과 상담원</h2>
-                </div>
-                <button id="close-ai-modal" class="modal-icon-btn">&times;</button>
-            </header>
-            <div id="ai-chat-history" class="chat-container">
-                <div class="chat-message bot">
-                    안녕하세요! 무엇을 도와드릴까요?
-                </div>
-            </div>
-            <footer class="ai-modal-footer">
-                <div class="ai-input-wrapper">
-                    <input type="text" id="ai-chat-input" placeholder="질문을 입력하세요..." autocomplete="off">
-                    <button id="ai-send-btn" title="전송">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                </div>
-            </footer>
+    <div id="login-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>포털 로그인이 필요합니다</h3>
+            <p>신청 및 마이페이지 이용을 위해 로그인하세요.</p>
+            <form id="login-form">
+                <input type="text" placeholder="학번" required>
+                <input type="password" placeholder="비밀번호" required>
+                <button type="submit" class="btn-primary">로그인</button>
+            </form>
+            <button class="close-modal">&times;</button>
         </div>
     </div>
 
-    <footer style="background:var(--primary); color:rgba(255,255,255,0.6); padding:4rem 0; margin-top:6rem;">
-        <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:2rem;">
-            <div>
-                <div class="logo" style="color:white; margin-bottom:1rem;">D-ARCHIVE</div>
-                <p style="font-size:0.9rem;">© 2026 D-ARCHIVE. All rights reserved.</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge-tech">K-반도체 인재양성 전략</div>
+            <h1>첨단산업 인재양성 부트캠프</h1>
+            <p>실제 산업 현장에 즉시 투입 가능한 반도체 실무 전문가를 양성합니다.</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Section A: Overview (Official Content Sync) -->
+        <section id="overview" class="section-a-full">
+            <div class="section-header">
+                <h3>사업 소개</h3>
             </div>
-            <div style="display:flex; gap:2rem; font-size:0.9rem;">
-                <a href="#" style="color:inherit; text-decoration:none;">이용약관</a>
-                <a href="#" style="color:inherit; text-decoration:none;">개인정보처리방침</a>
-                <a href="https://www.dongyang.ac.kr" target="_blank" style="color:inherit; text-decoration:none;">동양미래대학교 ↗</a>
+            <div class="overview-grid">
+                <div class="overview-card info">
+                    <h4>사업목적</h4>
+                    <p>산업계 수요를 반영하여 기업과 대학이 공동으로 반도체 분야 실무 중심의 인재를 양성하는 단기 집중 교육과정입니다.</p>
+                    <div class="divider-sm"></div>
+                    <h4>사업기간</h4>
+                    <p>2023. 03. 01 ~ 2028. 02. 29 (총 5년)</p>
+                </div>
+                <div class="overview-card vision">
+                    <div class="vision-content">
+                        <i class="fas fa-lightbulb"></i>
+                        <h4>VISION</h4>
+                        <p>미래를 밝히는 반도체 인재양성</p>
+                    </div>
+                </div>
+                <div class="overview-card goal">
+                    <div class="goal-content">
+                        <i class="fas fa-bullseye"></i>
+                        <h4>GOAL</h4>
+                        <p>산업계 연착륙형 반도체 실무 인재양성</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section B: Curriculum (3-Tab System Sync) -->
+        <section id="courses" class="section-b-parity">
+            <div class="section-header">
+                <h3>교육과정 신청</h3>
+            </div>
+            <div class="curriculum-tabs">
+                <button class="curr-tab active" data-curr="micro">마이크로디그리 과정</button>
+                <button class="curr-tab" data-curr="immersive">몰입형 교육과정</button>
+                <button class="curr-tab" data-curr="others">기타 교육과정</button>
+            </div>
+            <div id="curriculum-container" class="course-grid-parity">
+                <!-- Data populated via JS -->
+            </div>
+        </section>
+
+        <!-- Section D: Community & Notice (Official Board Sync) -->
+        <section id="community" class="section-d-full">
+            <div class="dashboard-split">
+                <div class="board-widget">
+                    <div class="widget-header">
+                        <h4>최근 공지사항</h4>
+                        <a href="#">더보기 <i class="fas fa-plus"></i></a>
+                    </div>
+                    <ul class="parity-board" id="notice-list">
+                        <!-- Populated via JS -->
+                    </ul>
+                </div>
+                <div class="notice-detail-mock" id="notice-detail">
+                    <div class="detail-header">
+                        <h4 id="detail-title">공지사항을 선택하세요</h4>
+                        <span id="detail-date">-</span>
+                    </div>
+                    <div class="detail-body" id="detail-body">
+                        <p>게시글 제목을 클릭하면 상세 내용을 확인하고 첨부파일을 다운로드할 수 있습니다.</p>
+                    </div>
+                    <div class="detail-footer">
+                        <button class="btn-download" id="download-mock" disabled><i class="fas fa-file-download"></i> 첨부파일.pdf [Down]</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section E: Partner Companies (Real Name Sync) -->
+        <section id="partners" class="section-e-full">
+            <div class="section-header">
+                <h3>참여기업 및 협력기관</h3>
+            </div>
+            <div class="partner-wall">
+                <div class="partner-card"><span>Anapass (아나패스)</span></div>
+                <div class="partner-card"><span>CSK (씨에스케이)</span></div>
+                <div class="partner-card"><span>FST (에프에스티)</span></div>
+                <div class="partner-card"><span>Intergratech (인터그라텍)</span></div>
+                <div class="partner-card"><span>SolidWorks (솔리드웍스)</span></div>
+                <div class="partner-card"><span>Doosan Robotics</span></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-wrap">
+            <div class="footer-left">
+                <div class="footer-logo">DYMU Semiconductor Bootcamp</div>
+                <p>서울특별시 구로구 경인로 445 (고척동) 동양미래대학교</p>
+                <p>Tel: 02-2610-xxxx | Fax: 02-2610-xxxx</p>
+            </div>
+            <div class="footer-right">
+                <p>© 2026 동양미래대학교 반도체부트캠프사업단. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
-    <script src="app.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
